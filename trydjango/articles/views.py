@@ -2,11 +2,12 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+from .forms import ArticleForm
 from .models import Article
 
 def article_search_view(request):
-    print(dir(request))
-    print(request.GET)
+    # print(dir(request))
+    # print(request.GET)
     query_dict = request.GET # this is a dictionary
     # query = query_dict.get("q") # <input type='text' name='q' />
     try:
@@ -24,14 +25,25 @@ def article_search_view(request):
 @login_required
 def article_create_view(request):
     # print(request.POST)
-    context = {}
-    if request.method == "POST":
-        title = request.POST.get("title")
-        content = request.POST.get("content")
-        print(title, content)
-        article_object = Article.objects.create(title=title, content=content)
-        context['object'] = article_object
-        context['created'] = True
+    form = ArticleForm(request.POST or None)
+    context = {
+        "form": form
+    }
+
+    # if request.method == "POST":
+    #     form = ArticleForm(request.POST)
+    #     context['form'] = form
+    #     if form.is_valid():
+    #         title = form.cleaned_data.get("title")
+    #         content = form.cleaned_data.get("content")
+    #         article_object = Article.objects.create(title=title, content=content)
+    #         context['object'] = article_object
+    #         context['created'] = True
+    if form.is_valid():
+        article_object = form.save()  
+        context['form'] = ArticleForm()
+        # context['object'] = article_object
+        # context['created'] = True
     return render(request, "articles/create.html", context=context)
 
 def article_detail_view(request, id=None):
