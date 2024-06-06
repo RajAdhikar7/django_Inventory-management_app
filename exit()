@@ -1,0 +1,23 @@
+[33mcommit 409ef2baee69a219d7c5b8adb7676489eeda8c6c[m[33m ([m[1;36mHEAD -> [m[1;32mnew-branch1[m[33m, [m[1;31morigin/new-branch1[m[33m)[m
+Author: RajAdhikar7 <adhikarraj77@gmail.com>
+Date:   Mon Jun 3 10:54:57 2024 +0530
+
+    slugs and signals added
+
+[33mcommit 408c2f6fa7dfefcae29e3e5de33af9dc4ad61fcf[m
+Author: RajAdhikar7 <adhikarraj77@gmail.com>
+Date:   Sun Jun 2 17:39:28 2024 +0530
+
+    added test case , used django's built in method for registration and login
+
+[33mcommit 60b352d30ab22cab92a54ba1f44449d920a9271b[m
+Author: Rameshwar Adhikar <105103534+RajAdhikar7@users.noreply.github.com>
+Date:   Tue May 28 18:39:32 2024 +0530
+
+    Create README.md
+
+[33mcommit a542f80b56f4913be5b136a76ca4b60e7d736573[m
+Author: RajAdhikar7 <adhikarraj77@gmail.com>
+Date:   Tue May 28 18:23:10 2024 +0530
+
+    first commit till 26th part
